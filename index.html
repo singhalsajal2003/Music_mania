@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musique-Music App</title>
+  <!-- attach the style css -->
+  <link rel="stylesheet" href="style.css"> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top-bar">
+            <i class="material-icons"></i>
+            <span><b>Musique</b></span>
+            <i class="material-icons"></i>
+        </div>
+        <div class="cover-art">
+            <img src="" alt="">
+        </div>
+        <div class="song-details">
+            <b><p class="song-name"></p></b>
+            <p class="artist-name"></p>
+        </div>
+        <div class="prog-area">
+            <div class="prog-bar">
+                <audio id="main-audio" src="/music/horizon.mp3"></audio>
+            </div>
+            <div class="timer">
+                <span class="curr-time">0:00</span>
+                <span class="max-duration">3:41</span>
+            </div>
+        </div>
+        <div class="controls">
+            <i id="repeat" class="material-icons" title="Playlist Looped">repeat</i>
+            <i id="prev" class="material-icons">skip_previous</i>
+            <div class="pause">
+                <i class="material-icons">play_arrow</i>
+            </div>
+            <i id="next" class="material-icons">skip_next</i>
+            <i id="more" class="material-icons">queue_music</i>
+        </div>
+        <div class="music-list">
+            <div class="header">
+              <div class="row">
+                <i class= "list material-icons">featured_play_list</i>
+                <span>Your Playlist</span>
+              </div>
+              <i id="close" class="material-icons">close</i>
+            </div>
+            <ul>
+            </ul>
+          </div>
+    </div>
+    <script src="/js/music-app.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

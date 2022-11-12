@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trispace", sans-serif;
+}
+*::before, *::after{
+  padding: 0;
+  margin: 0;
+}
+:root{
+  --new:#0AA1DD;
+  --new2:#2155CD;
+  --new3:#c0dfe6;
+  --pink: #ff74a4;
+  --violet: #9f6ea3;
+  --lightblack: #515C6F;
+  --white: #ffffff;
+  --darkwhite: #cecaca;
+  --pinkshadow: #ffcbdd;
+  --lightbshadow: rgba(0,0,0,0.15);
+  
+}
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(var(--new) 0%, var(--new2) 100%);
+}
+
+.wrapper{
+    width: 380px;
+    padding: 25px 30px;
+    overflow: hidden;
+    background: var(--new3);
+    border-radius: 0px;
+    position: relative;
+    box-shadow: 0px 6px 15px var(--lightbshadow);
+}
+
+.wrapper i{
+    cursor: pointer;
+  }
+
+.top-bar, .prog-area .timer, 
+.controls, .music-list .header, .music-list ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cover-art{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-top: 25px;
+    border-radius: 0px;
+    box-shadow: 0px 10px 10px 10px var(--lightbshadow);
+    margin-bottom: 10px;
+}
+
+.cover-art img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.song-details{
+    text-align: center;
+    margin: 30px 0;
+}
+
+.song-details p{
+    color: var(--lightblack);
+  }
+  .song-details .name{
+    font-size: 21px;
+  }
+  .song-details .artist{
+    font-size: 18px;
+    opacity: 0.9;
+    line-height: 35px;
+  }
+  .prog-area{
+    height: 6px;
+    width: 100%;
+    border-radius: 50px;
+    background: #f0f0f0;
+    cursor: pointer;
+  }
+
+  .prog-area .prog-bar{
+    height: inherit;
+    width: 0%;
+    position: relative;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--new) 0%, var(--new2) 100%);
+  }
+
+  .prog-bar::before{
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    top: 50%;
+    right: -5px;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+    background: inherit;
+    transition: opacity 1s ease;
+  }
+
+  .prog-area:hover .progress-bar::before{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .prog-area .song-timer{
+    margin-top: 2px;
+  }
+  .timer span{
+    margin-top: 5px;
+    font-size: 13px;
+    color: var(--lightblack);
+  }
+  .controls{
+    margin: 40px 0 5px 0;
+  }
+  .controls i{
+    font-size: 30px;
+    user-select: none;
+    background: linear-gradient(var(--new) 0%, var(--new2) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  /*select the previous and next buttons*/
+  .controls i:nth-child(2),
+  .controls i:nth-child(4){
+    font-size: 43px;
+  }
+
+  .controls #prev{
+    margin-right: -13px;
+  }
+  .controls #next{
+    margin-left: -13px;
+  }
+
+  .controls .pause{
+    height: 54px;
+    width: 54px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(var(--white) 0%, var(--darkwhite) 100%);
+    box-shadow: 0px 0px 5px var(--new);
+  }
+
+  .pause::before{
+    position: absolute;
+    content: "";
+    height: 43px;
+    width: 43px;
+    border-radius: inherit;
+    background: linear-gradient(var(--new) 0%, var(--new2) 100%);
+  }
+  .pause i{
+    height: 43px;
+    width: 43px;
+    line-height: 43px;
+    text-align: center;
+    background: inherit;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+  }
+  .music-list{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -55%;
+    pointer-events: none;
+    z-index: 5;
+    padding: 15px 30px;
+    border-radius: 0px;
+    background: white;
+    box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
+    transition: all 0.15s ease-out;
+  }
+  .music-list ul{
+    margin: 10px 0;
+    max-height: 260px;
+    overflow: auto;
+  }
+  .music-list .header .row{
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    color: var(--lightblack);
+  }
+  .header .row i{
+    cursor:default;
+  }
+  .header .row span{
+    margin-left: 5px;
+  }
+  .header #close{
+    font-size: 22px;
+    color: var(--lightblack);
+  }
+  .music-list ul{
+    margin: 10px 0;
+    max-height: 260px;
+    overflow: auto;
+  }
+  .music-list ul::-webkit-scrollbar{
+    width: 0px;
+  }
+  .music-list ul li{
+    list-style: none;
+    display: flex;
+    cursor: pointer;
+    padding-bottom: 10px;
+    opacity: 0.9;
+    pointer-events: none;
+    margin-bottom: 5px;
+    color: var(--lightblack);
+    border-bottom: 1px solid #E5E5E5;
+    transition: all 0.15s ease-out;
+  }
+  /* Well use this to show class in javascript */
+  .music-list.show{
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .music-list ul li:last-child{
+    border-bottom: 0px;
+  }
+  .music-list ul li .row span{
+    font-size: 17px;
+  }
+  .music-list ul li .row p{
+    opacity: 0.9;
+  }
+  ul li .audio-duration{
+    font-size: 16px;
+  }
+
+  ul li.playing{
+    color: var(--new);
+    font-weight: bold;
+    pointer-events: none;
+  }
